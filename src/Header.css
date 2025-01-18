@@ -1,0 +1,146 @@
+/* Base Styles for Header */
+.header {
+  display: flex;
+  justify-content: space-between; /* Align items: space between for desktop */
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start; /* For desktop, logo will be aligned left */
+  flex: 1;
+}
+
+.logo {
+  height: 40px; /* Set logo size */
+  width: auto;
+}
+
+/* Hamburger Menu Styles - Only visible on Mobile */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* When menu is open, bars change */
+.bar-open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.bar-open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar-open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+ul.nav-list {
+  display: flex;
+  list-style-type:none;
+}
+/* Mobile Styles (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Hamburger menu */
+  .hamburger-menu {
+    display: block; /* Show hamburger menu on mobile */
+  }
+
+  /* Logo - Center it on mobile */
+  .logo-container {
+    justify-content: center; /* Center the logo */
+    flex: 1;
+  }
+
+  /* Active mobile menu */
+  .nav {
+    position: absolute;
+    top: 60px; /* Adjust position below header */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Show menu when active */
+  .nav-active {
+    display: block;
+  }
+ 
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #ddd;
+  }
+
+  /* Remove desktop navigation */
+  .nav-list li {
+    width: 100%;
+  }
+}
+
+/* Desktop Styles (min-width: 769px) */
+@media (min-width: 769px) {
+  /* Normal navigation for larger screens */
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .nav-link {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    background-color: #ddd;
+  }
+
+  /* Remove hamburger and center logo for larger screens */
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Logo container takes up space on the left for larger screens */
+  .logo-container {
+    justify-content: flex-start; /* Align logo to the left */
+    flex: 1; /* Ensure logo takes space */
+  }
+}
