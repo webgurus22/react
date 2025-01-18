@@ -7,7 +7,8 @@ import About from './pages/About';
 import Services from './pages/Services'; 
 import FAQ from './pages/FAQ'; 
 import Contact from './pages/Contact';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const App = () => {
   return (
     <Router>
@@ -27,8 +28,7 @@ const App = () => {
 };
 
 const mainStyle = {
-  padding: '20px',
-  textAlign: 'center',
+  
 };
 
 export default App;
